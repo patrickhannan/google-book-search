@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+const apiRoutes = require("./controllers/apiRoutesController");
 
 const PORT = process.env.PORT || 3001;
 
@@ -28,6 +29,8 @@ connection.on("connected", () => {
 connection.on("error", (err) => {
   console.log("Mongoose connection error: ", err);
 });
+
+app.use(apiRoutes);
 
 app.get("/api/config", (req, res) => {
   res.json({
