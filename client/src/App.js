@@ -6,9 +6,11 @@ function App() {
   return (
     <>
     <Router>
+    <Navbar />
       <Switch>
         <Route exact path="/search" component={Search} />
         <Route exact path="/saved" component={Saved} />
+        <Route path="/" component={Search} />
       </Switch>
     </Router>
     </>
