@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const SearchBooks = (props) => {
-  const book = useState({
+  const [book, saveBook] = useState({
     title: props.title,
     authors: props.authors,
     description: props.description,
@@ -17,7 +17,7 @@ const SearchBooks = (props) => {
   };
 
   const viewBook = () => {
-    let path = book.link;
+    let path = props.link;
     window.open(path);
   }
 
