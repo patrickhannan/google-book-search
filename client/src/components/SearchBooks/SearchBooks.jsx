@@ -24,7 +24,7 @@ const SearchBooks = ({ data, props }) => {
   };
 
   const viewBook = () => {
-    let path = book.link;
+    let path = props.link;
     window.open(path);
   }
 
