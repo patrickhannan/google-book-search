@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-const SavedPage = (props) => {
+const SavedPage = () => {
   const [savedBooks, setSavedBooks] = useState([]);
 
   useEffect(() => {
@@ -29,31 +29,36 @@ const SavedPage = (props) => {
     <div className="card">
       <div className="card-body">
         <h5 className="card-title">Saved</h5>
-        {savedBooks.map((props) => {
+        {savedBooks.map((book) => {
           return (
             <>
-            <div className="container text-center">
-              <li className="list-group-item">
-                <h2>{props.title}</h2>
-                <h3>{props.authors}</h3>
-                <p>{props.description}</p>
-                <img src={props.image} alt="book"/>
-                <p>{props.link}</p>
-                <button
-                    type="submit"
-                    className="btn btn-secondary"
-                    id={props._id}
+              <div className="card" key={book._id}>
+                <div className="card-body">
+                  <button
+                    className="btn btn-success mr-2"
+                    id={book._id}
                     onClick={handleDelete}
                   >
                     DELETE
                   </button>
-                  <a href={props.link} target="_blank">
+                  <a href={book.link} target="_blank">
                     <button className="btn btn-secondary">
                       VIEW
                     </button>
                   </a>
-              </li>
-            </div>
+                  <h4>{book.title}</h4>
+                  <p>Written by: {book.authors}</p>
+                  <div className="row">
+                    <div className="col-sm-2">
+                      <img src={book.image} alt="Book" />
+                    </div>
+                    <div className="col-sm-10">
+                      <p className="float-left">{book.description}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br />
             </>
           );
         })}
