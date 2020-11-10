@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const SearchBooks = (props) => {
-  const [book] = useState({
+  const book = useState({
     title: props.title,
     authors: props.authors,
     description: props.description,
