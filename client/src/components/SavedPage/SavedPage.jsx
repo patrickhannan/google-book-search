@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-const SavedPage = () => {
+const SavedPage = (props) => {
   const [savedBooks, setSavedBooks] = useState([]);
 
   useEffect(() => {
@@ -34,21 +34,21 @@ const SavedPage = () => {
             <>
             <div className="container text-center">
               <li className="list-group-item">
-                <h2>{book.title}</h2>
-                <h3>{book.authors}</h3>
-                <p>{book.description}</p>
-                <img src={book.image} alt="book"/>
-                <p>{book.link}</p>
+                <h2>{props.title}</h2>
+                <h3>{props.authors}</h3>
+                <p>{props.description}</p>
+                <img src={props.image} alt="book"/>
+                <p>{props.link}</p>
                 <button
                     type="submit"
                     className="btn btn-secondary"
-                    id={book._id}
+                    id={props._id}
                     onClick={handleDelete}
                   >
                     DELETE
                   </button>
-                  <a href={book.link} target="_blank">
-                    <button className="float-right mr-2 btn btn-outline-success save">
+                  <a href={props.link} target="_blank">
+                    <button className="btn btn-secondary">
                       VIEW
                     </button>
                   </a>
