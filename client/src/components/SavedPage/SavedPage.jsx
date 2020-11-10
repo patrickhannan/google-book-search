@@ -29,7 +29,7 @@ const SavedPage = (props) => {
     <div className="card">
       <div className="card-body">
         <h5 className="card-title">Saved</h5>
-        {savedBooks.map((book) => {
+        {savedBooks.map((props) => {
           return (
             <>
             <div className="container text-center">
