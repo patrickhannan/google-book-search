@@ -1,0 +1,14 @@
+.navbar {
+    padding: 15px;
+    /* background-color: rgb(95, 145, 95); */
+    background-color: #28a745;
+  }
+  
+  .nav-text, .navbar-brand {
+    color: white !important;
+  }
+  
+  a.nav-text:hover {
+      cursor: pointer;
+      color: rgb(225, 225, 225) !important;
+  }

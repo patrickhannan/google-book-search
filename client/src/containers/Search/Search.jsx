@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import BookSearch from "../../components/BookSearch/BookSearch";
+import SearchBooks from "../../components/SearchBooks/SearchBooks.jsx";
 
 
 const Search = () => {
@@ -17,11 +17,10 @@ const Search = () => {
         axios
           .get(`https://www.googleapis.com/books/v1/volumes?q=${bookSearch}`)
           .then((res) => {
-            console.log(res);
             setBookResults(res.data.items);
           })
           .catch((err) => {
-            console.log(err);
+            if (err) throw err;
           });
       };
     
@@ -55,7 +54,7 @@ const Search = () => {
               {bookResults === undefined || bookResults.length === 0
                 ? "No books with that title"
                 : bookResults.map((res) => (
-                    <BookSearch
+                    <SearchBooks
                       key={res.selfLink}
                       title={res.volumeInfo.title}
                       authors={res.volumeInfo.authors}
