@@ -13,7 +13,7 @@ app.use(express.json());
 
 app.use(express.static("client/build"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/       ", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
