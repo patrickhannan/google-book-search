@@ -1,11 +1,10 @@
 .navbar {
-    padding: 15px;
-    /* background-color: rgb(95, 145, 95); */
-    background-color: #28a745;
+    padding: 10px;
+    background-color: #3528a7;
   }
   
   .nav-text, .navbar-brand {
-    color: white !important;
+    color: rgb(156, 154, 114) !important;
   }
   
   a.nav-text:hover {
